@@ -1,3 +1,4 @@
+import { detailMoviesAction } from "@/core/actions/movies/detail.action";
 import { nowPlayingAction } from "@/core/actions/movies/now-playin.action";
 import { PopularMoviesAction } from "@/core/actions/movies/popular.action";
 import { TopRatedAction } from "@/core/actions/movies/top-rated.action";
@@ -20,12 +21,12 @@ export const useMovies = () => {
         getNextPageParam: (lastPage, pages) => pages.length + 1
     });
     const topRatedQuery = useQuery({
-        queryKey: ["movies", "topRated"],
+        queryKey: ["movies", "topRated", 1],
         queryFn: () => TopRatedAction({ page: 1}),
         staleTime: 1000 * 60 * 60 * 24 // 24 horas
     });
     const upComingQuery = useQuery({
-        queryKey: ["movies", "upComing"],
+        queryKey: ["movies", "upComing", 1],
         queryFn: () => UpComingAction({ page: 1}),
         staleTime: 1000 * 60 * 60 * 24 // 24 horas
     });
@@ -34,6 +35,6 @@ export const useMovies = () => {
         nowPlayingQuery,
         popularQuery,
         topRatedQuery,
-        upComingQuery
+        upComingQuery,
     };
 };

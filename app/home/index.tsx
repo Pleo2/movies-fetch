@@ -10,8 +10,9 @@ import {
 import React from "react";
 import { useMovies } from "@/presentation/hooks/useMovies";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import MainSlideShow from "@/presentation/components/main-slide-show";
-import MoviesHorizontalList from "@/presentation/components/movies-horizontal-list";
+import MainSlideShow from "@/presentation/components/movies/main-slide-show";
+import MoviesHorizontalList from "@/presentation/components/movies/movies-horizontal-list";
+import LoadingIndicator from "@/presentation/components/ui/loading-indicator";
 
 export default function HomeScreen() {
     const safeArea = useSafeAreaInsets();
@@ -26,7 +27,7 @@ export default function HomeScreen() {
             }}
         >
             {nowPlayingQuery.isLoading ? (
-                <Loading />
+                <LoadingIndicator />
             ) : (
                 <ScrollView className="h-max">
                     <MainSlideShow
@@ -50,11 +51,3 @@ export default function HomeScreen() {
         </View>
     );
 }
-
-const Loading = () => {
-    return (
-        <View className="flex-1 items-center justify-center">
-            <ActivityIndicator size={30} />
-        </View>
-    );
-};
