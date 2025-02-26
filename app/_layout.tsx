@@ -35,7 +35,7 @@ export default function RootLayout() {
                             headerShown: false
                         }}/>
                     {/* </ScrollView> */}
-                <StatusBar style="auto" backgroundColor="rgba(0,0,0,0.3)" />
+                <StatusBar style="light" backgroundColor="rgba(0,0,0,0.3)" />
             </QueryClientProvider>
     );
 }
