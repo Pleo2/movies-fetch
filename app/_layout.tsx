@@ -7,7 +7,6 @@ import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import TestComponent from "@/presentation/components/TestComponent";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -31,7 +30,6 @@ export default function RootLayout() {
 
     return (
             <QueryClientProvider client={queryClient}>
-                 <TestComponent />
                     {/* <ScrollView> */}
                         <Stack screenOptions={{
                             headerShown: false

@@ -23,7 +23,6 @@ const MoviesDetails = () => {
     return (
             <>
             <Movieheader poster={data.poster} originalTitle={data.originalTitle} title={data.title} />
-            <TestComponent />
             </>
     )
 };

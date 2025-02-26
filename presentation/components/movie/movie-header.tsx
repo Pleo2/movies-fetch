@@ -13,9 +13,7 @@ const Movieheader = ({ poster, originalTitle, title}: Props) => {
     const { height: ScreenHeight } = useWindowDimensions();
     return (
         <>
-            <View style={{
-                display: 'none'
-            }} className="absolute z-10 top-20 left-2">
+            <View className="absolute z-10 top-10 left-2">
                 <Pressable onPress={() => {router.dismiss()}}>
                     <Ionicons className="shadow"  name="arrow-back"  size={30}  color={'white'}/>
                 </Pressable>
