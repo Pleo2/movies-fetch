@@ -7,7 +7,6 @@ import { useMovies } from "@/presentation/hooks/useMovies";
 import { useLocalSearchParams } from "expo-router/build/hooks";
 import { View, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import "../../global.css";
 import TestComponent from "@/presentation/components/TestComponent";
 import React from "react";
 
