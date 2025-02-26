@@ -41,15 +41,9 @@ const MoviesHorizontalList = ({ movies, title, loadNextPage }: Props) => {
     };
 
     return (
-        <View style={{ marginBottom: 20 }}>
+        <View style={{ marginBottom: 40, marginLeft: 10 }}>
             <Text
-                className="text-2xl text-white px-6 font-semibold"
-                style={{
-                    color: "white",
-                    fontSize: 20,
-                    fontWeight: 700,
-                    marginBottom: 20
-                }}
+                className="text-4xl text-white px-2 font-bold font-Geist-medium mb-2"
             >
                 {title}
             </Text>

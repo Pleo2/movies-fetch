@@ -23,22 +23,15 @@ const Movieheader = ({ poster, originalTitle, title}: Props) => {
                 />
             </View>
 
-            <View className="absolute z-10 top-10 left-2">
-                <Pressable onPress={() => {router.dismiss()}}>
-                    <Ionicons className="shadow"  name="arrow-back"  size={30}  color={'white'}/>
-                </Pressable>
-            </View>
-
-
             <View style={{ height: ScreenHeight * 0.7 }}>
                 <View className="flex-1 rounded-b-lg overflow-hidden">
                     <Image style={{ flex: 1 }} source={{ uri: poster }} resizeMode='cover'/>
                 </View>
             </View>
 
-            <View className="px-5 mt-5">
-                <Text className="font-normal ">{originalTitle}</Text>
-                <Text className="font-semibold text-2xl">{title}</Text>
+            <View className="px-5 mt-5 text-white">
+                <Text className=" text-white font-Geist-regular ">{originalTitle}</Text>
+                <Text className=" text-4xl text-white font-Geist-bold mt-2">{title}</Text>
             </View>
         </>
     );

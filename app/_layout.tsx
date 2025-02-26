@@ -1,5 +1,6 @@
 import "@/global.css";
 import "react-native-reanimated";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Slot, Stack } from "expo-router";
@@ -15,7 +16,9 @@ const queryClient = new QueryClient();
 
 export default function RootLayout() {
     const [loaded] = useFonts({
-        SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf")
+        "Geist-regular": require("../assets/fonts/Geist-Regular.ttf"),
+        "Geist-bold": require("../assets/fonts/Geist-Bold.ttf"),
+        "Geist-medium": require("../assets/fonts/Geist-Medium.ttf"),
     });
 
     useEffect(() => {
@@ -29,13 +32,15 @@ export default function RootLayout() {
     }
 
     return (
+        <GestureHandlerRootView style={{ flex: 1, backgroundColor: "#000" }}>
             <QueryClientProvider client={queryClient}>
-                    {/* <ScrollView> */}
-                        <Stack screenOptions={{
-                            headerShown: false
-                        }}/>
-                    {/* </ScrollView> */}
+                {/* <ScrollView> */}
+                    <Stack screenOptions={{
+                        headerShown: false
+                    }}/>
+                {/* </ScrollView> */}
                 <StatusBar style="light" backgroundColor="rgba(0,0,0,0.3)" />
             </QueryClientProvider>
+        </GestureHandlerRootView>
     );
 }

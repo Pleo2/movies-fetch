@@ -17,14 +17,10 @@ import LoadingIndicator from "@/presentation/components/ui/loading-indicator";
 export default function HomeScreen() {
     const safeArea = useSafeAreaInsets();
     const { nowPlayingQuery, popularQuery, upComingQuery, topRatedQuery } = useMovies();
-
+    const PaddingTop = `padding-top-[${safeArea.top}]`;
     return (
         <View
-            style={{
-                paddingTop: safeArea.top,
-                flex: 1,
-                backgroundColor: "black"
-            }}
+            className={`flex-1 bg-black ${PaddingTop} `}
         >
             {nowPlayingQuery.isLoading ? (
                 <LoadingIndicator />
